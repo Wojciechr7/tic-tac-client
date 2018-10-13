@@ -1,18 +1,24 @@
+h1 {
+  text-align: center;
+}
+
 main {
   display: flex;
+  flex-flow: wrap;
 
   app-board {
-    width: 30vw;
-    height: 30vw;
+    width: 350px;
+    height: 350px;
     margin: auto;
     display: flex;
     flex-flow: wrap;
   }
 
   app-lobby {
-    width: 250px;
-    height: 400px;
+    width: 350px;
+    height: 500px;
     border: 1px solid black;
     margin: auto;
+    position: relative;
   }
 }

@@ -7,12 +7,11 @@ import {Square} from '../classes/square';
 export class AppService {
 
   public squares: Array<Square>;
+  public gameStarted: boolean;
 
   constructor() {
     this.squares = this.createSquares();
-
-    console.log(this.squares);
-
+    this.gameStarted = false;
 
   }
 
