@@ -1,0 +1,24 @@
+.lobby-head {
+  height: 25%;
+  h3 {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  .lobby-input {
+    display: flex;
+
+    input, button {
+      margin: 10px auto;
+    }
+  }
+}
+
+
+.player-list {
+  background: rgba(128, 128, 128, 0.1);
+  width: 100%;
+  height: 75%;
+  overflow-y: scroll;
+}

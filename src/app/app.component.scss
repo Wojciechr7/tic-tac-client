@@ -1,0 +1,18 @@
+main {
+  display: flex;
+
+  app-board {
+    width: 30vw;
+    height: 30vw;
+    margin: auto;
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  app-lobby {
+    width: 250px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+  }
+}

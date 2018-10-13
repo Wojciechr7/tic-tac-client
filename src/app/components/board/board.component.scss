@@ -1,0 +1,15 @@
+app-square {
+  width: calc(33.3334% - 6px);
+  height: calc(33.3334% - 6px);
+  transition: all .3s;
+  cursor: pointer;
+  border: 1px solid black;
+  margin: auto;
+
+
+  &:hover {
+    background: rgba(255, 10, 220, 0.38);
+  }
+
+}
+
