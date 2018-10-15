@@ -1,15 +1,27 @@
+div.row {
+  width: 100%;
+  display: flex;
+  height: calc(33.3334% - 6px);
+}
+
 app-square {
   width: calc(33.3334% - 6px);
-  height: calc(33.3334% - 6px);
+  height: 100%;
   transition: all .3s;
   cursor: pointer;
   border: 1px solid black;
   margin: auto;
+  display: flex;
 
 
   &:hover {
     background: rgba(255, 10, 220, 0.38);
   }
 
+}
+
+button.leave-game {
+  position: fixed;
+  top: 0;
 }
 

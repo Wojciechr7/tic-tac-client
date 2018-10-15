@@ -1,0 +1,16 @@
+header {
+  height: 40px;
+  width: 100%;
+  background: rgba(68, 78, 78, 0.04);
+
+  h3 {
+    margin: 0;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+section.games {
+  height: 160px;
+  overflow-y: scroll;
+}

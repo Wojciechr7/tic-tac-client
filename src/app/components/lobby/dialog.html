@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Game Invitation</h1>
+<div mat-dialog-content>
+    <p>Do you want to play the game with <b>{{this.data[0].from.name}}</b>?</p>
+    <button mat-button color="primary" (click)="confirm()">yes</button>
+    <button mat-button color="basic" (click)="cancel()">no</button>
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+</div>

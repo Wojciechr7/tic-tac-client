@@ -1,5 +1,10 @@
-<app-square *ngFor="let square of this.as.squares"></app-square>
+
+<div *ngFor="let row of this.gs.grid" class="row">
+    <app-square *ngFor="let square of row" (click)="this.attackHandler(square)" [sign]="square.sign"></app-square>
+</div>
 
 
-<button (click)="this.leaveHandler()">Leave Game</button>
+
+
+<button class="leave-game" (click)="this.leaveHandler()">Leave Game</button>
 

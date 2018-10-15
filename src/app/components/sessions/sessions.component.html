@@ -1,0 +1,9 @@
+<header>
+  <h3>Active Games</h3>
+</header>
+
+<section class="games">
+<ul>
+  <li *ngFor="let session of this.sessions">{{session.from.name}} vs {{session.to.name}}</li>
+</ul>
+</section>

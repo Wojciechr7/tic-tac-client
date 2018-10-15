@@ -6,6 +6,7 @@ import {AppSettings} from '../app.const';
 import {IPlayer} from '../interfaces/iplayer';
 import { Socket } from 'ngx-socket-io';
 import { map } from 'rxjs/operators';
+import {ISession} from '../interfaces/isession';
 
 @Injectable({
     providedIn: 'root'
@@ -15,14 +16,21 @@ export class LobbyService {
     public players: Array<Player>;
     private url: string;
     public localPlayer: string;
+    public sessions: Observable<ISession[]>;
 
     constructor(private http: HttpClient, private socket: Socket) {
         this.url = AppSettings.url;
         this.localPlayer = '';
+        this.sessions = this.socket
+            .fromEvent<any>('update-sessions')
+            .pipe(map( data => data.sessions ));
     }
 
     public getPlayers(): Observable<IPlayer[]> {
         return this.http.get<IPlayer[]>(this.url + '/players');
+    }
+    public getSession(): Observable<ISession[]> {
+        return this.http.get<ISession[]>(this.url + '/session');
     }
 
     public addPlayer(data) {
@@ -74,6 +82,15 @@ export class LobbyService {
             .fromEvent<any>('handshake')
             .pipe(map( data => data ));
     }
+  /*  public getActualData() {
+        return this.socket
+            .fromEvent<any>('actual-data')
+            .pipe(map( data => data ));
+    }*/
+
+/*    public handshakeBack(data) {
+        this.socket.emit('handshake-back', data);
+    }*/
 
     public cancelInvite(data) {
         this.socket.emit('cancel-invite', data);
@@ -82,6 +99,13 @@ export class LobbyService {
     public leaveGame() {
         this.socket.emit('leave-game', {});
     }
+
+    public closeGame() {
+        return this.socket
+            .fromEvent<any>('close-game')
+            .pipe(map( data => data ));
+    }
+
 
 
     public getStorageName() {
