@@ -27,8 +27,10 @@ import {
     MatProgressBarModule
 } from '@angular/material';
 import { SessionsComponent } from './components/sessions/sessions.component';
+import { GameComponent } from './components/game/game.component';
+import { PrivateChatComponent } from './components/private-chat/private-chat.component';
 
-const config: SocketIoConfig = {url: 'http://localhost:3001', options: {}};
+const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {}};
 
 @NgModule({
     declarations: [
@@ -37,7 +39,9 @@ const config: SocketIoConfig = {url: 'http://localhost:3001', options: {}};
         SquareComponent,
         LobbyComponent,
         ConfirmDialog,
-        SessionsComponent
+        SessionsComponent,
+        GameComponent,
+        PrivateChatComponent
     ],
     imports: [
         BrowserModule,

@@ -14,6 +14,7 @@ export class GameService {
 
     private url: string;
     public grid: Square[][];
+    public session: ISession;
 
     constructor(private http: HttpClient, private socket: Socket) {
         this.url = AppSettings.url;

@@ -1,0 +1,14 @@
+<section class="private-chat">
+  <header>
+    <h3>{{this.gs.session.from.name}} vs {{this.gs.session.to.name}}</h3>
+  </header>
+  <div class="chat">
+    <ul>
+      <!--<li *ngFor="let msg of this.messages"><b>{{msg.author}}:</b> {{msg.content}}</li>-->
+    </ul>
+
+  </div>
+
+  <input type="text" placeholder="Message" class="messager" #msg (keydown.enter)="this.messageHandler(msg)">
+
+</section>

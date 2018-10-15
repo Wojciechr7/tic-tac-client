@@ -108,13 +108,9 @@ export class LobbyComponent implements OnInit, OnDestroy {
                 this.as.gameStarted = true;
                 this.ls.removePlayer();
                 this.gs.updateBoard(data);
+                this.gs.session = data;
             });
 
-     /*   this.ls
-            .getActualData()
-            .subscribe(data => {
-                this.gs.updateBoard(data);
-            });*/
 
         (<HTMLInputElement>document.getElementById('name-input')).value = this.ls.getStorageName();
 

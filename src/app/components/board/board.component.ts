@@ -37,6 +37,8 @@ export class BoardComponent implements OnInit, OnDestroy {
         });
 
         this.getGameInfoRef = this.gs.getGameInfo().subscribe((data) => {
+            this.gs.session = data;
+            console.log(data);
            this.gs.updateBoard(data);
         });
 
