@@ -52,6 +52,11 @@ export class GameService {
             .fromEvent<any>('game-over')
             .pipe(map( data => data ));
     }
+    public pmUpdate() {
+        return this.socket
+            .fromEvent<any>('pm-update')
+            .pipe(map( data => data ));
+    }
 
     public attack(square: Square) {
         this.socket.emit('attack', {x: square.x, y: square.y});
@@ -59,6 +64,10 @@ export class GameService {
 
     public determineWinner(fp, sp, actual): string {
         return fp.socket === actual ? sp.name : fp.name;
+    }
+
+    public sendMessage(msg: string) {
+        this.socket.emit('private-message', {msg: msg});
     }
 
 
