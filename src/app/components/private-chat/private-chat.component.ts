@@ -21,6 +21,10 @@ export class PrivateChatComponent implements OnInit, OnDestroy {
     msg.value = '';
   }
 
+/*  public isActive(playerName: string): boolean {
+    return playerName === this.gs.session.actualPlayer.name;
+  }*/
+
   ngOnInit() {
     this.messagerRef = this.gs.pmUpdate().subscribe((data: IMessage) => {
       this.messages.push(data);

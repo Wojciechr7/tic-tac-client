@@ -1,6 +1,9 @@
 <section class="private-chat">
   <header>
-    <h3>{{this.gs.session.from.name}} vs {{this.gs.session.to.name}}</h3>
+    <h3>
+      <span [ngClass]="{'active': this.gs.session.from.name === this.gs.session.actualPlayer.name}">{{this.gs.session.from.name}}</span> vs
+      <span [ngClass]="{'active': this.gs.session.to.name === this.gs.session.actualPlayer.name}">{{this.gs.session.to.name}}</span>
+    </h3>
   </header>
   <div class="chat">
     <ul>

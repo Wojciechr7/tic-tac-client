@@ -32,6 +32,9 @@ export class LobbyService {
     public getSession(): Observable<ISession[]> {
         return this.http.get<ISession[]>(this.url + '/session');
     }
+    public getOnlineOnce(): Observable<number> {
+        return this.http.get<number>(this.url + '/online');
+    }
 
     public addPlayer(data) {
         this.socket.emit('add-player', data);

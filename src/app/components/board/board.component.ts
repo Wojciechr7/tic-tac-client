@@ -14,6 +14,7 @@ export class BoardComponent implements OnInit, OnDestroy {
     private closeGameRef;
     private getGameInfoRef;
     private gameOverRef;
+    private drawRef;
 
 
     constructor(public ls: LobbyService, public as: AppService, public gs: GameService) {
@@ -38,13 +39,19 @@ export class BoardComponent implements OnInit, OnDestroy {
 
         this.getGameInfoRef = this.gs.getGameInfo().subscribe((data) => {
             this.gs.session = data;
-            console.log(data);
            this.gs.updateBoard(data);
         });
 
         this.gameOverRef = this.gs.gameOver().subscribe((data) => {
+            this.gs.session = data;
             const winner = this.gs.determineWinner(data.from, data.to, data.actualPlayer);
             alert(`Player ${winner} won the game.`);
+            this.gs.updateBoard(data);
+        });
+
+        this.drawRef = this.gs.draw().subscribe((data) => {
+            this.gs.session = data;
+            alert(`Nobody win.`);
             this.gs.updateBoard(data);
         });
 
@@ -55,6 +62,8 @@ export class BoardComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.closeGameRef.unsubscribe();
         this.getGameInfoRef.unsubscribe();
+        this.gameOverRef.unsubscribe();
+        this.drawRef.unsubscribe();
     }
 
 }

@@ -22,6 +22,7 @@ export class LobbyComponent implements OnInit, OnDestroy {
     private playersUpdateRef;
     private getMessagesRef;
     private handshakeRef;
+    private getOnlineOnceRef;
 
 
     constructor(public ls: LobbyService, public as: AppService, public gs: GameService, public dialog: MatDialog) {
@@ -104,12 +105,15 @@ export class LobbyComponent implements OnInit, OnDestroy {
         this.handshakeRef = this.ls
             .handshake()
             .subscribe((data: ISession) => {
-          /*      this.ls.handshakeBack(data);*/
                 this.as.gameStarted = true;
                 this.ls.removePlayer();
                 this.gs.updateBoard(data);
                 this.gs.session = data;
             });
+
+        this.getOnlineOnceRef = this.ls.getOnlineOnce().subscribe((online: number) => {
+            this.online = online.toString();
+        });
 
 
         (<HTMLInputElement>document.getElementById('name-input')).value = this.ls.getStorageName();
@@ -122,6 +126,7 @@ export class LobbyComponent implements OnInit, OnDestroy {
         this.playersUpdateRef.unsubscribe();
         this.getMessagesRef.unsubscribe();
         this.handshakeRef.unsubscribe();
+        this.getOnlineOnceRef.unsubscribe();
     }
 
 }
@@ -166,7 +171,6 @@ export class ConfirmDialog implements OnInit {
         this.as.intervalRef = setInterval(() => {
             this.increaseProgress();
         }, 60);
-
     }
 
 }

@@ -1,68 +1,175 @@
-.lobby-head {
-  height: 20%;
-  h3 {
-    text-align: center;
-    margin: 0;
-    padding-top: 10px;
-  }
-  p {
-    text-align: center;
-    margin: 0;
-  }
 
-  .lobby-input {
-    display: flex;
 
-    input, button {
-      margin: 10px auto;
+section {
+  width: 350px;
+  height: 503px;
+  margin: auto;
+  position: relative;
+  background: url("/img/card-bg.jpg");
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+
+  .lobby-head {
+    height: 28%;
+    h3 {
+      text-align: center;
+      margin: 0;
+      padding-top: 10px;
+    }
+    p {
+      text-align: center;
+      margin: 0;
+    }
+
+    .lobby-input {
+      display: flex;
+      background: rgba(0, 0, 0, 0.28);
+      height: 60px;
+      width: 92%;
+      margin: 10px auto 0 auto;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+
+      input {
+        background: none;
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        height: 23px;
+        padding-left: 8px;
+
+        &::placeholder {
+          opacity: 1;
+          color: white;
+        }
+      }
+
+      input, a {
+        margin: auto;
+
+      }
+
+      .join-lobby {
+        background: url("/img/buttons/accept.png") no-repeat;
+        width: 64px;
+        height: 32px;
+
+        &:hover {
+          background: url("/img/buttons/accept-click.png") no-repeat;
+        }
+      }
+
+      .leave-lobby {
+        background: url("/img/buttons/cancel.png") no-repeat;
+        width: 64px;
+        height: 32px;
+
+        &:hover {
+          background: url("/img/buttons/cancel-click.png") no-repeat;
+        }
+
+      }
     }
   }
-}
 
-.player-list {
-  background: rgba(128, 128, 128, 0.1);
-  width: 100%;
-  height: 45%;
-  overflow-y: scroll;
+  .player-list-container {
+    background: rgba(0, 0, 0, 0.28);
+    width: 92%;
+    height: calc(35% - 20px);
+    margin: 0 auto 5px auto;
 
-  ul {
-    padding-left: 10px;
-    padding-right: 10px;
-    li {
-      margin-top: 10px;
-      list-style-type: none;
-      font-weight: bold;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    border-radius: 2px;
+
+    .player-list {
+      width: 100%;
+      height: 100%;
+      padding-right: 17px;
+      overflow-y: scroll;
+      box-sizing: content-box;
+
+      ul {
+        padding-left: 10px;
+        padding-right: 10px;
+        li {
+          height: 32px;
+          list-style-type: none;
+          font-weight: bold;
+          border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
+          padding-top: 12px;
+          padding-left: 8px;
+          position: relative;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.33);
+            cursor:url('/img/cursors/fight.png'),auto;
+          }
+
+          img {
+            position: relative;
+            top: 3px;
+          }
+        }
+      }
     }
   }
-}
 
-.chat {
-  width: 100%;
+
+.chat-box {
+  width: 92%;
   height: calc(35% - 23px);
-  background: rgba(128, 128, 128, 0.03);
-  overflow-y: scroll;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.28);
+  overflow-y: hidden;
   position: relative;
   overflow-x: hidden;
+  box-sizing: content-box;
+  margin: auto;
 
-  ul {
-    margin-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+  .chat {
+    width: 100%;
+    height: 100%;
+    padding-right: 17px;
+    overflow-y: scroll;
+    box-sizing: content-box;
 
-    li {
-      list-style-type: none;
+    ul {
+      margin-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      li {
+        list-style-type: none;
+      }
     }
+
   }
-
 }
 
-input.messager {
-  position: absolute;
-  bottom: 0;
-  width: calc(100%);
-  border-left: none;
-  border-right: none;
+
+  input.messager {
+
+    width: calc(92%);
+    margin: auto;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background: url("/img/buttons/msg2.png") no-repeat;
+    color: white;
+    padding-left: 28px;
+    position: relative;
+
+    &::placeholder {
+      opacity: 1;
+      color: white;
+    }
+
+  }
 }
+
+
+
+
 
 mat-progress-bar {
   margin-top: 20px;

@@ -1,27 +1,40 @@
-<div class="lobby-head">
-    <h3>Game Lobby</h3>
-    <p>Online: {{this.online}}</p>
-    <div class="lobby-input">
-        <input #playerName type="text" placeholder="Enter Your Name" id="name-input" (keydown.enter)="this.joinLobby(playerName)">
-        <button (click)="this.joinLobby(playerName)">Join</button>
-        <button (click)="this.leaveLobby()">Leave</button>
+
+
+<section>
+    <div class="lobby-head">
+        <h3>GAME LOBBY</h3>
+        <p>Online: {{this.online}}</p>
+        <div class="lobby-input">
+            <input #playerName type="text" placeholder="Enter Your Name" id="name-input" (keydown.enter)="this.joinLobby(playerName)">
+            <a (click)="this.joinLobby(playerName)" class="join-lobby"></a>
+            <a (click)="this.leaveLobby()" class="leave-lobby"></a>
+        </div>
     </div>
-</div>
+
+    <div class="player-list-container">
+        <div class="player-list">
+            <ul>
+                <li *ngFor="let player of this.ls.players" (click)="this.inviteToGame(player.Name)">
+                    <img src="/img/buttons/person.png" alt="">
+                    {{player.Name}}</li>
+            </ul>
+        </div>
+    </div>
 
 
-<div class="player-list">
-    <ul>
-        <li *ngFor="let player of this.ls.players"><button (click)="this.inviteToGame(player.Name)">+</button> {{player.Name}}</li>
-    </ul>
-</div>
-<div class="chat" id="chat-container">
-    <ul>
-        <li *ngFor="let msg of this.messages"><b>{{msg.author}}:</b> {{msg.content}}</li>
-    </ul>
+    <div class="chat-box">
+        <div class="chat" id="chat-container">
+            <ul>
+                <li *ngFor="let msg of this.messages"><b>{{msg.author}}:</b> {{msg.content}}</li>
+            </ul>
 
-</div>
+        </div>
+    </div>
 
-<input class="messager" type="text" #msg (keydown.enter)="this.messageHandler(msg)" placeholder="Message">
+
+    <input class="messager" type="text" #msg (keydown.enter)="this.messageHandler(msg)" placeholder="Message">
+</section>
+
 
 
 

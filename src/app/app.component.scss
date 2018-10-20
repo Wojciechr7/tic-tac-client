@@ -14,11 +14,14 @@ main {
   }
 
   app-lobby {
-    width: 350px;
-    height: 500px;
-    border: 1px solid black;
+    width: 378px;
+    height: 530px;
     margin: auto;
+    display: flex;
     position: relative;
+    background: url("/img/border/border.png") no-repeat;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
   }
   app-sessions {
     width: 350px;

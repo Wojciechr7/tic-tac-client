@@ -47,6 +47,11 @@ export class GameService {
             .fromEvent<any>('game-info')
             .pipe(map( data => data ));
     }
+    public draw() {
+        return this.socket
+            .fromEvent<any>('tie')
+            .pipe(map( data => data ));
+    }
     public gameOver() {
         return this.socket
             .fromEvent<any>('game-over')
@@ -63,7 +68,7 @@ export class GameService {
     }
 
     public determineWinner(fp, sp, actual): string {
-        return fp.socket === actual ? sp.name : fp.name;
+        return fp.socket === actual.socket ? sp.name : fp.name;
     }
 
     public sendMessage(msg: string) {

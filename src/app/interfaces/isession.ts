@@ -9,5 +9,5 @@ export interface ISession {
     squares: Array<any>;
     result: ISessionResult;
     status: boolean;
-    actualPlayer: string;
+    actualPlayer: IPlayer;
 }
