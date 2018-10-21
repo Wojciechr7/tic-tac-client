@@ -1,8 +1,8 @@
 
 
 section {
-  width: 350px;
-  height: 503px;
+  width: 257px;
+  height: 474px;
   margin: auto;
   position: relative;
   background: url("/img/card-bg.jpg");
@@ -10,6 +10,13 @@ section {
   overflow: hidden;
   display: flex;
   flex-flow: column;
+
+  @media(min-width: 600px) {
+    & {
+      width: 373px;
+      height: 470px;
+    }
+  }
 
   .lobby-head {
     height: 28%;
@@ -31,12 +38,15 @@ section {
       margin: 10px auto 0 auto;
       border: 1.5px solid rgba(255, 255, 255, 0.3);
       border-radius: 2px;
+      flex-flow: column;
+
+
 
       input {
         background: none;
         border: 1.5px solid rgba(255, 255, 255, 0.3);
         color: white;
-        height: 23px;
+        height: 20px;
         padding-left: 8px;
 
         &::placeholder {
@@ -49,27 +59,39 @@ section {
         margin: auto;
 
       }
+      .lobby-buttons {
+        margin: 0 auto auto auto;
+        display: flex;
 
-      .join-lobby {
-        background: url("/img/buttons/accept.png") no-repeat;
-        width: 64px;
-        height: 32px;
+        .join-lobby {
+          background: url("/img/buttons/accept.png") no-repeat;
+          background-size: 100% 100%;
+          width: 44px;
+          height: 20px;
+          margin-right: 10px;
 
-        &:hover {
-          background: url("/img/buttons/accept-click.png") no-repeat;
+          &:hover {
+            background: url("/img/buttons/accept-click.png") no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+
+        .leave-lobby {
+          background: url("/img/buttons/cancel.png") no-repeat;
+          background-size: 100% 100%;
+          width: 44px;
+          height: 20px;
+          margin-left: 10px;
+
+          &:hover {
+            background: url("/img/buttons/cancel-click.png") no-repeat;
+            background-size: 100% 100%;
+          }
+
         }
       }
 
-      .leave-lobby {
-        background: url("/img/buttons/cancel.png") no-repeat;
-        width: 64px;
-        height: 32px;
 
-        &:hover {
-          background: url("/img/buttons/cancel-click.png") no-repeat;
-        }
-
-      }
     }
   }
 
@@ -89,27 +111,35 @@ section {
       padding-right: 17px;
       overflow-y: scroll;
       box-sizing: content-box;
+      overflow-x: hidden;
 
       ul {
         padding-left: 10px;
         padding-right: 10px;
+        width: 100%;
         li {
           height: 32px;
           list-style-type: none;
           font-weight: bold;
           border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
-          padding-top: 12px;
-          padding-left: 8px;
           position: relative;
+          display: flex;
+
 
           &:hover {
             background: rgba(0, 0, 0, 0.33);
             cursor:url('/img/cursors/fight.png'),auto;
           }
 
-          img {
-            position: relative;
-            top: 3px;
+          p {
+            margin: auto 0;
+          }
+          span {
+            height: 100%;
+            width: 30px;
+            background: url("/img/buttons/person.png") no-repeat;
+            display: block;
+            background-position: center;
           }
         }
       }
@@ -154,10 +184,11 @@ section {
     width: calc(92%);
     margin: auto;
     border: 1.5px solid rgba(255, 255, 255, 0.3);
-    background: url("/img/buttons/msg2.png") no-repeat;
+    background: url("/img/buttons/msg.png") no-repeat;
     color: white;
     padding-left: 28px;
     position: relative;
+
 
     &::placeholder {
       opacity: 1;

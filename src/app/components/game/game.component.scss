@@ -1,7 +1,32 @@
 app-board {
-  width: 350px;
-  height: 350px;
-  margin: auto;
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
   display: flex;
-  flex-flow: wrap;
+  position: relative;
+  background: url("/img/border/board/border-desktop.png") no-repeat;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  @media (max-width: 600px) {
+    & {
+      width: 280px;
+      height: 280px;
+      background: url("/img/border/board/border-mobile.png") no-repeat;
+    }
+
+  }
+}
+
+.leave-game {
+  background: url("/img/buttons/exit.png") no-repeat 100% 100%;
+  width: 166px;
+  height: 40px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+
+  &:hover {
+    background: url("/img/buttons/exit-click.png") no-repeat 100% 100%;
+  }
 }

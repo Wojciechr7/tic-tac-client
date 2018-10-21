@@ -5,10 +5,11 @@ body { margin: 0; font-family: 'Roboto', sans-serif; cursor:url('/img/cursors/no
 
   background: url('/img/bg.jpg') no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 
   &::after{
     position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-    content:url('/img/buttons/accept-click.png') url('/img/buttons/cancel-click.png') url('/img/buttons/person.png');
+    content:url('/img/buttons/accept-click.png') url('/img/buttons/cancel-click.png') url('/img/buttons/person.png') url('/img/buttons/exit-click.png') url('/img/buttons/exit.png');
   }
 }
 button:hover {

@@ -30,7 +30,8 @@ import { SessionsComponent } from './components/sessions/sessions.component';
 import { GameComponent } from './components/game/game.component';
 import { PrivateChatComponent } from './components/private-chat/private-chat.component';
 
-const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {}};
+// const config: SocketIoConfig = {url: 'http://localhost:3000/', options: {}};
+const config: SocketIoConfig = {url: 'https://tic-tac-server.herokuapp.com/', options: {}};
 
 @NgModule({
     declarations: [

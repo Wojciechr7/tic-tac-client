@@ -1,3 +1,19 @@
+section {
+  width: 372px;
+  height: 370px;
+  margin: auto;
+  display: flex;
+  flex-flow: wrap;
+  background: url("/img/board-bg.jpg") no-repeat;
+  background-size: cover;
+
+  @media (max-width: 600px) {
+    width: 252px;
+    height: 250px;
+  }
+
+}
+
 div.row {
   width: 100%;
   display: flex;
@@ -7,21 +23,16 @@ div.row {
 app-square {
   width: calc(33.3334% - 6px);
   height: 100%;
-  transition: all .3s;
-  cursor: pointer;
-  border: 1px solid black;
+  cursor: url('/img/cursors/cango.png'),auto;;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   margin: auto;
   display: flex;
+  color: white;
+
 
 
   &:hover {
-    background: rgba(255, 10, 220, 0.38);
+    background: rgba(22, 2, 166, 0.48);
   }
 
 }
-
-button.leave-game {
-  position: fixed;
-  top: 0;
-}
-

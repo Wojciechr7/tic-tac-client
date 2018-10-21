@@ -21,12 +21,18 @@ export class PrivateChatComponent implements OnInit, OnDestroy {
     msg.value = '';
   }
 
+    private scrollMessages() {
+        const objDiv = document.getElementById('scrollable');
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
 /*  public isActive(playerName: string): boolean {
     return playerName === this.gs.session.actualPlayer.name;
   }*/
 
   ngOnInit() {
     this.messagerRef = this.gs.pmUpdate().subscribe((data: IMessage) => {
+      this.scrollMessages();
       this.messages.push(data);
     });
   }

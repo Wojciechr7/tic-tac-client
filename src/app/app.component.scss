@@ -14,20 +14,29 @@ main {
   }
 
   app-lobby {
-    width: 378px;
-    height: 530px;
+    width: 280px;
+    height: 500px;
     margin: auto;
     display: flex;
     position: relative;
-    background: url("/img/border/border.png") no-repeat;
+    background: url("/img/border/lobby/border-mobile.png") no-repeat;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+    @media(min-width: 600px) {
+    & {
+      width: 400px;
+      background: url("/img/border/lobby/border-desktop.png") no-repeat;
+    }
+  }
 
   }
   app-sessions {
-    width: 350px;
+    width: 280px;
     height: 200px;
-    border: 1px solid black;
     margin: auto;
     position: relative;
+    display: flex;
+    background: url("/img/border/sessions/border-mobile.png") no-repeat;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   }
 }

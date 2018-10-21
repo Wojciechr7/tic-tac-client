@@ -1,16 +1,72 @@
-header {
-  height: 40px;
-  width: 100%;
-  background: rgba(68, 78, 78, 0.04);
+.session-container {
+  width: 252px;
+  height: 170px;
+  display: flex;
+  flex-flow: column;
+  background: url("/img/card-bg.jpg");
+  margin: auto;
+  color: white;
 
-  h3 {
-    margin: 0;
-    text-align: center;
-    padding-top: 10px;
+  header {
+    height: 40px;
+    width: 100%;
+    background: rgba(68, 78, 78, 0.04);
+
+    h3 {
+      margin: 0;
+      text-align: center;
+      padding-top: 10px;
+    }
   }
+
+
+  .games-container {
+    height: 120px;
+    background: rgba(0, 0, 0, 0.28);
+    width: 92%;
+    margin: 0 auto;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    border-radius: 2px;
+
+    section.games {
+      width: 100%;
+      height: 100%;
+      padding-right: 17px;
+      overflow-y: scroll;
+      box-sizing: content-box;
+      overflow-x: hidden;
+
+      ul {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        li {
+          width: 100%;
+          display: flex;
+          list-style-type: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          font-size: 12px;
+
+          span.battle-icon {
+            width: 30px;
+            height: 30px;
+            display: block;
+            background: url("/img/buttons/battle.png") no-repeat;
+            background-position: center;
+          }
+
+          p:first-child {
+            margin: auto 0 auto auto;
+          }
+          p:last-child {
+            margin: auto auto auto 0;
+          }
+
+        }
+      }
+    }
+  }
+
 }
 
-section.games {
-  height: 160px;
-  overflow-y: scroll;
-}

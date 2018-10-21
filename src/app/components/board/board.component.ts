@@ -23,10 +23,7 @@ export class BoardComponent implements OnInit, OnDestroy {
 
 
 
-    public leaveHandler() {
-        this.ls.leaveGame();
-        this.as.gameStarted = false;
-    }
+
 
     public attackHandler(square: Square) {
         this.gs.attack(square);

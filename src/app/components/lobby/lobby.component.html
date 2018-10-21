@@ -6,8 +6,10 @@
         <p>Online: {{this.online}}</p>
         <div class="lobby-input">
             <input #playerName type="text" placeholder="Enter Your Name" id="name-input" (keydown.enter)="this.joinLobby(playerName)">
-            <a (click)="this.joinLobby(playerName)" class="join-lobby"></a>
-            <a (click)="this.leaveLobby()" class="leave-lobby"></a>
+            <div class="lobby-buttons">
+                <a (click)="this.joinLobby(playerName)" class="join-lobby"></a>
+                <a (click)="this.leaveLobby()" class="leave-lobby"></a>
+            </div>
         </div>
     </div>
 
@@ -15,8 +17,9 @@
         <div class="player-list">
             <ul>
                 <li *ngFor="let player of this.ls.players" (click)="this.inviteToGame(player.Name)">
-                    <img src="/img/buttons/person.png" alt="">
-                    {{player.Name}}</li>
+                    <span class="person-icon"></span>
+                    <p>{{player.Name}}</p>
+                </li>
             </ul>
         </div>
     </div>
